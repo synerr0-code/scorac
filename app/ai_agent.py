@@ -11,7 +11,7 @@ load_dotenv()
 # You can customize the model parameter, e.g. "openai:gpt-4o" or just rely on default/env vars.
 # For now, we assume the user has configured the model via env vars or default behavior.
 model = OpenRouterModel(
-    model_name="google/gemini-2.5-flash-lite",
+    model_name="openrouter/free",
     provider=OpenRouterProvider(
         api_key=os.getenv("OPENROUTER_API_KEY")
     )
