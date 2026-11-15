@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* NACOS Dark Theme - Emerald Green */
+    --background: 222 47% 3%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 5%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 5%;
+    --popover-foreground: 210 40% 98%;
+
+    /* Emerald Green Primary */
+    --primary: 142 71% 45%;
+    --primary-foreground: 222 47% 3%;
+
+    --secondary: 217 33% 12%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 33% 12%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 217 33% 15%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 33% 12%;
+    --input: 217 33% 15%;
+    --ring: 142 71% 45%;
+
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    background-image:
+      radial-gradient(ellipse 80% 50% at 20% -20%, rgba(34, 197, 94, 0.15), transparent),
+      radial-gradient(ellipse 60% 40% at 80% 100%, rgba(20, 184, 166, 0.1), transparent);
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+
+  /* Glowing card effect */
+  .card-glow {
+    @apply transition-all duration-300;
+  }
+
+  .card-glow:hover {
+    @apply -translate-y-1;
+    box-shadow: 0 0 30px -5px rgba(34, 197, 94, 0.2);
+    border-color: rgba(34, 197, 94, 0.3);
+  }
+
+  /* Primary button glow */
+  .btn-glow {
+    @apply transition-all duration-200;
+  }
+
+  .btn-glow:hover {
+    box-shadow: 0 0 20px -2px rgba(34, 197, 94, 0.4);
+  }
+
+  /* Stats card style */
+  .stat-card {
+    @apply bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-6;
+  }
+}
+
+@layer utilities {
+
+  /* Gradient text */
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-teal-400;
+  }
+}
